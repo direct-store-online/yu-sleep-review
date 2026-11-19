@@ -3,116 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>16,000 Woodworking Plans With Step-by-Step Blueprints</title>
-<meta name="description" content="Browse a huge library of woodworking plans with diagrams, cut lists and step-by-step instructions for every skill level.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<title>Yu Sleep: What to Know Before You Buy</title>
+<meta name="description" content="An independent look at Yu Sleep, a nighttime supplement. Read the details before you decide.">
 <style>
-:root{
-  --ink:#12263A; --blue:#1D4E7A; --paper:#F7F9FB; --line:#C9D6E2;
-  --oak:#B9783A; --oak-dark:#8F5A27; --text:#233444; --white:#fff;
-}
+:root{--bg:#0B1220;--card:#121B2E;--line:#25324B;--text:#D8E0EE;--muted:#93A0B8;--accent:#6C8CFF;--accent-dark:#4F6FE0;--white:#fff}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:"Source Sans 3",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  color:var(--text);background:var(--paper);line-height:1.6;font-size:18px;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:32px 32px;background-attachment:fixed;
-}
-h1,h2{font-family:Bitter,Georgia,serif;color:var(--ink);line-height:1.2}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
-header{background:var(--ink);color:var(--white);padding:14px 0;font-family:Bitter,Georgia,serif;font-weight:600}
-article{background:var(--white);margin:28px auto;padding:32px 24px;border:1px solid var(--line);max-width:760px}
-h1{font-size:clamp(1.7rem,5vw,2.5rem);font-weight:800;margin-bottom:14px}
-h2{font-size:clamp(1.3rem,3.6vw,1.7rem);margin:30px 0 10px}
-p{margin-bottom:16px;max-width:68ch}
-.lead{font-size:1.15rem;color:var(--blue)}
-ul{margin:0 0 18px 0;padding:0;list-style:none}
-li{padding:10px 0 10px 34px;border-bottom:1px dashed var(--line);position:relative}
-li::before{content:"";position:absolute;left:4px;top:17px;width:16px;height:8px;border-left:3px solid var(--oak);border-bottom:3px solid var(--oak);transform:rotate(-45deg)}
-.btn{
-  display:inline-block;text-decoration:none;font-weight:600;font-size:1.05rem;
-  padding:15px 26px;border-radius:4px;border:2px solid var(--oak);
-  background:var(--oak);color:var(--white);cursor:pointer;font-family:inherit;text-align:center;
-  transition:background .2s;
-}
-.btn:hover{background:var(--oak-dark);border-color:var(--oak-dark)}
-.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
-.btn.ghost:hover{background:var(--ink);color:var(--white)}
-:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-.cta-box{background:var(--ink);color:var(--white);padding:26px 22px;margin-top:30px;text-align:center}
-.cta-box h2{color:var(--white);margin-top:0}
-.cta-box p{margin-left:auto;margin-right:auto}
-footer{max-width:760px;margin:0 auto 40px;padding:0 20px;font-size:.82rem;color:#566B7E}
-footer p{max-width:none;margin-bottom:8px}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:17px;min-height:100vh}
+.page{max-width:720px;margin:0 auto;padding:24px 18px 60px}
+.page.blurred{filter:blur(6px);pointer-events:none;user-select:none}
+.brand{font-weight:700;letter-spacing:.3px;color:var(--white);padding:6px 0 18px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.hero{display:block;text-align:center;margin-bottom:22px}
+.hero img{width:100%;max-width:520px;height:auto;border-radius:12px;border:1px solid var(--line);background:var(--card);min-height:220px}
+h1{color:var(--white);font-size:clamp(1.6rem,5vw,2.3rem);line-height:1.2;margin-bottom:14px}
+h2{color:var(--white);font-size:1.3rem;margin:26px 0 8px}
+p{margin-bottom:14px}
+ul{list-style:none;margin-bottom:16px}
+li{padding:9px 0 9px 28px;position:relative;border-bottom:1px solid var(--line)}
+li::before{content:"";position:absolute;left:4px;top:15px;width:14px;height:7px;border-left:3px solid var(--accent);border-bottom:3px solid var(--accent);transform:rotate(-45deg)}
+.btn{display:inline-block;text-decoration:none;text-align:center;font:600 1rem/1 inherit;font-family:inherit;padding:16px 26px;border-radius:8px;border:2px solid var(--accent);background:var(--accent);color:#08101F;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:var(--white)}
+.btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn.ghost:hover{background:var(--line);color:var(--white)}
+:focus-visible{outline:3px solid var(--white);outline-offset:2px}
+.cta{text-align:center;margin-top:28px}
+.note{font-size:.82rem;color:var(--muted);margin-top:26px}
 
-/* Cookie-style popup */
-.overlay{position:fixed;inset:0;background:rgba(18,38,58,.72);display:flex;align-items:flex-end;justify-content:center;padding:16px;z-index:50}
+.overlay{position:fixed;inset:0;background:rgba(5,9,18,.6);display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}
 .overlay[hidden]{display:none}
-.popup{
-  background:var(--white);width:100%;max-width:520px;border-top:6px solid var(--oak);
-  padding:26px 22px 22px;box-shadow:0 20px 60px rgba(0,0,0,.35);
-  max-height:92vh;overflow:auto;animation:rise .45s ease-out both;
-}
-@keyframes rise{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
-.popup h2{font-size:1.35rem;margin:0 0 8px}
-.popup p{font-size:1rem;margin-bottom:12px}
-.popup .small{font-size:.85rem;color:#566B7E}
+.popup{background:#fff;color:#1B2433;width:100%;max-width:480px;border-radius:14px;padding:28px 24px 22px;box-shadow:0 24px 70px rgba(0,0,0,.5);max-height:92vh;overflow:auto;animation:pop .35s ease-out both}
+@keyframes pop{from{transform:scale(.94);opacity:0}to{transform:none;opacity:1}}
+.popup h2{color:#0B1220;font-size:1.3rem;margin:0 0 10px}
+.popup p{font-size:.97rem;margin-bottom:10px;color:#35425A}
+.popup .small{font-size:.8rem;color:#66738B}
 .actions{display:flex;flex-direction:column;gap:10px;margin-top:16px}
-@media(min-width:600px){
-  .overlay{align-items:center}
-  .actions{flex-direction:row}
-  .actions .btn{flex:1}
-  article{padding:44px 48px}
-}
-@media(prefers-reduced-motion:reduce){.popup{animation:none}html{scroll-behavior:auto}}
+.popup .btn.ghost{color:#1B2433;border-color:#C5CEDD}
+.popup .btn.ghost:hover{background:#E8ECF4;color:#0B1220}
+.popup .btn{color:#08101F}
+.popup .btn:hover{color:#fff}
+@media(min-width:560px){.actions{flex-direction:row}.actions .btn{flex:1}}
+@media(prefers-reduced-motion:reduce){.popup{animation:none}}
 </style>
 </head>
 <body>
 
-<header><div class="wrap">The Workshop Plan Guide</div></header>
+<main class="page blurred" id="page">
+  <div class="brand">Sleep Support Review</div>
 
-<article>
-  <h1>Looking for Woodworking Plans? Here's What a 16,000-Plan Library Gives You</h1>
-  <p class="lead">Whether you're building your first shelf or your tenth dining table, good plans save you wood, time and frustration.</p>
+  <!-- LINK DA IMAGEM DO YU SLEEP AQUI: troque o valor de src abaixo pela URL da imagem dos frascos -->
+  <a class="hero" href="https://2e9a2-kzs53kfvek7i02miak3i.hop.clickbank.net" rel="sponsored noopener">
+    <img src="COLE_AQUI_A_URL_DA_IMAGEM" alt="Yu Sleep bottles">
+  </a>
 
-  <h2>Why plans matter more than tools</h2>
-  <p>Most failed projects don't fail because of the saw. They fail because of missing measurements, unclear steps or a cut list that doesn't add up. A complete plan fixes that before you touch the lumber.</p>
+  <h1>Yu Sleep: What to Know Before You Buy</h1>
+  <p>Yu Sleep is a nighttime supplement marketed to people who want extra support for their evening routine. This short page covers the basics so you can decide if it's worth a closer look.</p>
 
-  <h2>What this plan collection includes</h2>
+  <h2>Key points</h2>
   <ul>
-    <li>Thousands of projects: furniture, sheds, benches, outdoor pieces, workshop storage and more</li>
-    <li>Step-by-step instructions with diagrams and material lists</li>
-    <li>Plans for beginners through experienced builders</li>
-    <li>Instant digital access, so you can print or open plans in the shop</li>
+    <li>Sold as a dietary supplement, not a medication</li>
+    <li>Designed to be taken as part of a nightly routine</li>
+    <li>Ingredients and pricing are listed on the seller's page</li>
+    <li>Results vary from person to person</li>
   </ul>
 
-  <h2>Who it's a good fit for</h2>
-  <p>Hobbyists who want a weekend project, homeowners who'd rather build than buy, and anyone who wants one place to find their next project instead of searching dozens of sites.</p>
+  <h2>Before you try any supplement</h2>
+  <p>Talk to a doctor or pharmacist first, especially if you take medication, are pregnant or nursing, or have a health condition. Good sleep habits (consistent schedule, dark room, less screen time) matter too.</p>
 
-  <div class="cta-box">
-    <h2>See the plans for yourself</h2>
-    <p>Browse the full collection, check the categories and decide if it fits your next project.</p>
-    <a class="btn" href="https://cae26bv9y4cu2v7m-cxahi0k46.hop.clickbank.net" rel="sponsored noopener" target="_blank">View the woodworking plans</a>
+  <div class="cta">
+    <a class="btn" href="https://2e9a2-kzs53kfvek7i02miak3i.hop.clickbank.net" rel="sponsored noopener">See Yu Sleep details and pricing</a>
   </div>
-</article>
 
-<footer>
-  <p><strong>Disclosure:</strong> This is an independent promotional page. If you buy through the link, we may earn a commission at no extra cost to you. We are not the creators or sellers of the product, and results depend on your skills, tools and effort.</p>
-  <p>This page is not part of Google, YouTube, Facebook or any other network.</p>
-</footer>
+  <p class="note"><strong>Disclosure:</strong> This is an independent promotional page. If you buy through our link, we may earn a commission at no extra cost to you. We are not the manufacturer or seller. This product is not intended to diagnose, treat, cure or prevent any disease.</p>
+</main>
 
-<!-- Cookie-style popup -->
 <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="pt" aria-describedby="pd">
   <div class="popup">
-    <h2 id="pt">Before you continue</h2>
-    <p id="pd">This page features a collection of <strong>16,000 woodworking plans</strong> with step-by-step instructions, diagrams and material lists. Want to go straight to the collection?</p>
-    <p class="small">This site uses cookies to improve your experience. Clicking the buttons below saves your choice.</p>
+    <h2 id="pt">Before You Continue: Cookie Settings</h2>
+    <p id="pd">We use cookies to improve your experience and to track referrals if you visit the Yu Sleep seller's page through this site.</p>
+    <p class="small">By choosing "Accept &amp; Continue" you agree to cookies and go to the Yu Sleep page. Choose "Close" to stay and read more.</p>
     <div class="actions">
-      <a class="btn" id="accept" href="https://cae26bv9y4cu2v7m-cxahi0k46.hop.clickbank.net" rel="sponsored noopener">Accept and view plans</a>
-      <button class="btn ghost" id="more" type="button">Read more first</button>
+      <a class="btn" href="https://2e9a2-kzs53kfvek7i02miak3i.hop.clickbank.net" rel="sponsored noopener">Accept &amp; Continue</a>
+      <button class="btn ghost" id="close" type="button">Close</button>
     </div>
   </div>
 </div>
@@ -120,16 +90,16 @@ footer p{max-width:none;margin-bottom:8px}
 <script>
 (function(){
   var overlay=document.getElementById('overlay');
-  var more=document.getElementById('more');
-  try{ if(sessionStorage.getItem('popupSeen')){ overlay.hidden=true; } }catch(e){}
-  function close(){
+  var page=document.getElementById('page');
+  var closeBtn=document.getElementById('close');
+  function closePopup(){
     overlay.hidden=true;
-    try{ sessionStorage.setItem('popupSeen','1'); }catch(e){}
+    page.classList.remove('blurred');
     document.body.style.overflow='';
   }
-  if(!overlay.hidden){ document.body.style.overflow='hidden'; more.focus(); }
-  more.addEventListener('click',close);
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!overlay.hidden){ close(); }});
+  document.body.style.overflow='hidden';
+  closeBtn.addEventListener('click',closePopup);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!overlay.hidden){closePopup();}});
 })();
 </script>
 </body>
