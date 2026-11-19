@@ -1,106 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Yu Sleep: What to Know Before You Buy</title>
-<meta name="description" content="An independent look at Yu Sleep, a nighttime supplement. Read the details before you decide.">
-<style>
-:root{--bg:#0B1220;--card:#121B2E;--line:#25324B;--text:#D8E0EE;--muted:#93A0B8;--accent:#6C8CFF;--accent-dark:#4F6FE0;--white:#fff}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:17px;min-height:100vh}
-.page{max-width:720px;margin:0 auto;padding:24px 18px 60px}
-.page.blurred{filter:blur(6px);pointer-events:none;user-select:none}
-.brand{font-weight:700;letter-spacing:.3px;color:var(--white);padding:6px 0 18px;border-bottom:1px solid var(--line);margin-bottom:22px}
-.hero{display:block;text-align:center;margin-bottom:22px}
-.hero img{width:100%;max-width:520px;height:auto;border-radius:12px;border:1px solid var(--line);background:var(--card);min-height:220px}
-h1{color:var(--white);font-size:clamp(1.6rem,5vw,2.3rem);line-height:1.2;margin-bottom:14px}
-h2{color:var(--white);font-size:1.3rem;margin:26px 0 8px}
-p{margin-bottom:14px}
-ul{list-style:none;margin-bottom:16px}
-li{padding:9px 0 9px 28px;position:relative;border-bottom:1px solid var(--line)}
-li::before{content:"";position:absolute;left:4px;top:15px;width:14px;height:7px;border-left:3px solid var(--accent);border-bottom:3px solid var(--accent);transform:rotate(-45deg)}
-.btn{display:inline-block;text-decoration:none;text-align:center;font:600 1rem/1 inherit;font-family:inherit;padding:16px 26px;border-radius:8px;border:2px solid var(--accent);background:var(--accent);color:#08101F;cursor:pointer;transition:background .2s}
-.btn:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:var(--white)}
-.btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
-.btn.ghost:hover{background:var(--line);color:var(--white)}
-:focus-visible{outline:3px solid var(--white);outline-offset:2px}
-.cta{text-align:center;margin-top:28px}
-.note{font-size:.82rem;color:var(--muted);margin-top:26px}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu Sleep™ Official Site — Cookie Preferences & Offer Access</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-.overlay{position:fixed;inset:0;background:rgba(5,9,18,.6);display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}
-.overlay[hidden]{display:none}
-.popup{background:#fff;color:#1B2433;width:100%;max-width:480px;border-radius:14px;padding:28px 24px 22px;box-shadow:0 24px 70px rgba(0,0,0,.5);max-height:92vh;overflow:auto;animation:pop .35s ease-out both}
-@keyframes pop{from{transform:scale(.94);opacity:0}to{transform:none;opacity:1}}
-.popup h2{color:#0B1220;font-size:1.3rem;margin:0 0 10px}
-.popup p{font-size:.97rem;margin-bottom:10px;color:#35425A}
-.popup .small{font-size:.8rem;color:#66738B}
-.actions{display:flex;flex-direction:column;gap:10px;margin-top:16px}
-.popup .btn.ghost{color:#1B2433;border-color:#C5CEDD}
-.popup .btn.ghost:hover{background:#E8ECF4;color:#0B1220}
-.popup .btn{color:#08101F}
-.popup .btn:hover{color:#fff}
-@media(min-width:560px){.actions{flex-direction:row}.actions .btn{flex:1}}
-@media(prefers-reduced-motion:reduce){.popup{animation:none}}
-</style>
+        body {
+            background-color: #0b1120;
+            color: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Fundo desfocado simulando a página oficial do Yu Sleep */
+        .bg-page-simulation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top center, #1e3a8a 0%, #0f172a 60%, #020617 100%);
+            filter: blur(10px);
+            transform: scale(1.05);
+            z-index: 1;
+            opacity: 0.75;
+            pointer-events: none;
+        }
+
+        /* Elementos decorativos borrados ao fundo para dar realismo */
+        .bg-mock-content {
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.15);
+            filter: blur(6px);
+            z-index: 1;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .bg-mock-content h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .bg-mock-content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Caixa Central - Pop-up de Cookies */
+        .cookie-modal {
+            position: relative;
+            z-index: 10;
+            background: #ffffff;
+            width: 100%;
+            max-width: 460px;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55);
+            padding: 28px 24px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Área da Imagem do Produto no Topo */
+        .product-top-link {
+            display: block;
+            margin: 0 auto 18px auto;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .product-top-link:hover {
+            transform: scale(1.03);
+        }
+
+        .product-top-link img {
+            max-width: 210px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .cookie-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+        }
+
+        .cookie-modal h1 {
+            font-size: 21px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .cookie-modal p {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.55;
+            margin-bottom: 22px;
+        }
+
+        /* Grupo de Botões Antifuga */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-accept {
+            display: block;
+            width: 100%;
+            background-color: #16a34a;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 10px;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.35);
+        }
+
+        .btn-accept:hover {
+            background-color: #15803d;
+            transform: translateY(-1px);
+        }
+
+        .btn-close {
+            display: block;
+            width: 100%;
+            background-color: #f1f5f9;
+            color: #475569;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .btn-close:hover {
+            background-color: #e2e8f0;
+            color: #1e293b;
+        }
+
+        .footer-note {
+            margin-top: 16px;
+            font-size: 11px;
+            color: #94a3b8;
+        }
+
+        @media (min-width: 480px) {
+            .button-group {
+                flex-direction: row;
+            }
+            .btn-accept {
+                flex: 2;
+            }
+            .btn-close {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<main class="page blurred" id="page">
-  <div class="brand">Sleep Support Review</div>
-
-  <!-- LINK DA IMAGEM DO YU SLEEP AQUI: troque o valor de src abaixo pela URL da imagem dos frascos -->
-  <a class="hero" href="https://2e9a2-kzs53kfvek7i02miak3i.hop.clickbank.net" rel="sponsored noopener">
-    <img src="COLE_AQUI_A_URL_DA_IMAGEM" alt="Yu Sleep bottles">
-  </a>
-
-  <h1>Yu Sleep: What to Know Before You Buy</h1>
-  <p>Yu Sleep is a nighttime supplement marketed to people who want extra support for their evening routine. This short page covers the basics so you can decide if it's worth a closer look.</p>
-
-  <h2>Key points</h2>
-  <ul>
-    <li>Sold as a dietary supplement, not a medication</li>
-    <li>Designed to be taken as part of a nightly routine</li>
-    <li>Ingredients and pricing are listed on the seller's page</li>
-    <li>Results vary from person to person</li>
-  </ul>
-
-  <h2>Before you try any supplement</h2>
-  <p>Talk to a doctor or pharmacist first, especially if you take medication, are pregnant or nursing, or have a health condition. Good sleep habits (consistent schedule, dark room, less screen time) matter too.</p>
-
-  <div class="cta">
-    <a class="btn" href="https://2e9a2-kzs53kfvek7i02miak3i.hop.clickbank.net" rel="sponsored noopener">See Yu Sleep details and pricing</a>
-  </div>
-
-  <p class="note"><strong>Disclosure:</strong> This is an independent promotional page. If you buy through our link, we may earn a commission at no extra cost to you. We are not the manufacturer or seller. This product is not intended to diagnose, treat, cure or prevent any disease.</p>
-</main>
-
-<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="pt" aria-describedby="pd">
-  <div class="popup">
-    <h2 id="pt">Before You Continue: Cookie Settings</h2>
-    <p id="pd">We use cookies to improve your experience and to track referrals if you visit the Yu Sleep seller's page through this site.</p>
-    <p class="small">By choosing "Accept &amp; Continue" you agree to cookies and go to the Yu Sleep page. Choose "Close" to stay and read more.</p>
-    <div class="actions">
-      <a class="btn" href="https://2e9a2-kzs53kfvek7i02miak3i.hop.clickbank.net" rel="sponsored noopener">Accept &amp; Continue</a>
-      <button class="btn ghost" id="close" type="button">Close</button>
+    <!-- Fundo Escuro Desfocado -->
+    <div class="bg-page-simulation"></div>
+    <div class="bg-mock-content">
+        <h2>Start Using Yu Sleep Tonight for Deep, Restorative Sleep</h2>
+        <p>All-natural nano-enhanced sleep formula designed to help you fall asleep faster and wake up refreshed.</p>
     </div>
-  </div>
-</div>
 
-<script>
-(function(){
-  var overlay=document.getElementById('overlay');
-  var page=document.getElementById('page');
-  var closeBtn=document.getElementById('close');
-  function closePopup(){
-    overlay.hidden=true;
-    page.classList.remove('blurred');
-    document.body.style.overflow='';
-  }
-  document.body.style.overflow='hidden';
-  closeBtn.addEventListener('click',closePopup);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!overlay.hidden){closePopup();}});
-})();
-</script>
+    <!-- Pop-up Central de Cookies -->
+    <div class="cookie-modal">
+        
+        <!-- Imagem dos Frascos no Topo (Clicável para o Hoplink) -->
+        <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="product-top-link">
+            <!-- LINK DA IMAGEM DO YU SLEEP AQUI -->
+            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=450&auto=format&fit=crop&q=80" alt="Yu Sleep Official Supplement">
+        </a>
+
+        <div class="cookie-badge">Official Website Access</div>
+
+        <h1>Before You Continue — Cookie Settings &amp; Official Offer</h1>
+
+        <p>
+            We use cookies to ensure you get the best experience and to unlock your verified discount on the official <strong>Yu Sleep</strong> website. Click below to proceed.
+        </p>
+
+        <!-- Botões Antifuga (Ambos direcionam para o Hoplink) -->
+        <div class="button-group">
+            <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-accept">
+                Accept &amp; Continue
+            </a>
+            <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-close">
+                Close
+            </a>
+        </div>
+
+        <div class="footer-note">
+            256-Bit SSL Encrypted &bull; Verified Official Store Redirect
+        </div>
+    </div>
+
 </body>
 </html>
