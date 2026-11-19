@@ -77,56 +77,67 @@
             color: #facc15;
         }
 
-        .official-main {
+        /* Chamada Grande Estilo Site Oficial embaixo */
+        .official-lower-section {
             max-width: 980px;
-            margin: 34px auto;
-            padding: 0 20px 50px 20px;
-            display: grid;
-            grid-template-columns: 1fr 1.25fr;
-            gap: 30px;
-            align-items: center;
+            margin: 28px auto 0 auto;
+            padding: 0 20px 60px 20px;
         }
 
-        .official-bottle-box {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
+        .big-official-callout {
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1px solid #cbd5e1;
+            border-radius: 14px;
+            padding: 32px 28px;
+            text-align: left;
         }
 
-        .official-bottle-box img {
-            max-width: 100%;
-            max-height: 270px;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-
-        .official-copy h2 {
-            font-size: 22px;
+        .big-official-callout h2 {
+            font-size: 26px;
+            line-height: 1.25;
             color: #1e1b4b;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+            font-weight: 800;
         }
 
-        .official-copy p {
-            font-size: 15px;
+        .big-official-callout .lead-copy {
+            font-size: 16px;
+            line-height: 1.65;
             color: #334155;
-            line-height: 1.6;
-            margin-bottom: 14px;
+            margin-bottom: 18px;
+        }
+
+        .big-official-callout .highlight-banner {
+            background-color: #ede9fe;
+            border-left: 4px solid #6d28d9;
+            padding: 14px 18px;
+            border-radius: 8px;
+            color: #3b0764;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
         .official-bullets {
             list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            font-size: 14px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            font-size: 14.5px;
             color: #1e293b;
-            font-weight: 500;
+            font-weight: 600;
+        }
+
+        .official-bullets li {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 12px 14px;
+            border-radius: 8px;
         }
 
         .official-bullets li::before {
-            content: "• ";
+            content: "● ";
             color: #7c3aed;
             font-weight: 700;
         }
@@ -224,11 +235,11 @@
         }
 
         @media (max-width: 720px) {
-            .official-main {
-                grid-template-columns: 1fr;
-            }
             .official-hero h1 {
                 font-size: 22px;
+            }
+            .big-official-callout h2 {
+                font-size: 21px;
             }
             .official-menu {
                 display: none;
@@ -254,21 +265,20 @@
             <h1>Start Using <span>YuSleep</span> Tonight for the Deep, Restorative Sleep Your Body Deserves!</h1>
         </section>
 
-        <main class="official-main">
-            <div class="official-bottle-box">
-                <!-- Suba a imagem dos frascos no GitHub com o nome yusleep.png -->
-                <img src="yusleep.png" alt="Yu Sleep Bottles">
-            </div>
-
-            <div class="official-copy">
-                <h2>Yu Sleep Formula</h2>
-                <p>
-                    Yu Sleep is an all-natural nano-enhanced sleep formula designed to help you fall asleep faster, stay asleep all night without 3 AM wake-ups, and wake up truly refreshed.
+        <!-- Chamada Grande embaixo no Estilo do Site Oficial -->
+        <main class="official-lower-section">
+            <div class="big-official-callout">
+                <h2>Yu Sleep Is a Delicious, All-Natural Nano-Enhanced Sleep Formula Designed to Help You Sleep Deeply Through the Night</h2>
+                <p class="lead-copy">
+                    Instead of relying on high-dose melatonin or synthetic supplements that can leave you groggy the next morning, Yu Sleep works with your body's natural rhythm using plant-based ingredients backed by modern science.
                 </p>
+                <div class="highlight-banner">
+                    Wake Up Truly Refreshed — Support Calm Evenings, Deeper Rest, and Steady Morning Energy Without 3 AM Wake-Ups.
+                </div>
                 <ul class="official-bullets">
-                    <li>Fall asleep faster</li>
-                    <li>Stay asleep all night without those brutal 3 AM wake-ups</li>
-                    <li>Wake up truly refreshed</li>
+                    <li>Fall asleep faster naturally</li>
+                    <li>Stay asleep all night without 3 AM wake-ups</li>
+                    <li>Wake up truly refreshed and clear-headed</li>
                 </ul>
             </div>
         </main>
