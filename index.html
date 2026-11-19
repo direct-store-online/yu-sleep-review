@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yu Sleep™ Official Offer — Deep Restorative Sleep</title>
+    <title>Cookie Policy — Yu Sleep</title>
     <style>
         * {
             margin: 0;
@@ -13,8 +13,7 @@
         }
 
         body {
-            background-color: #090514;
-            color: #1e293b;
+            background-color: #334155;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -24,242 +23,170 @@
             overflow-x: hidden;
         }
 
-        /* Fundo escuro desfocado simulando a página oficial */
-        .bg-blur-layer {
+        /* Fundo nítido (sem blur) simulando a vitrine do produto */
+        .page-backdrop {
             position: fixed;
             inset: 0;
-            background: radial-gradient(circle at 50% 20%, #4c1d95 0%, #1e1b4b 45%, #070510 100%);
-            filter: blur(12px);
-            transform: scale(1.08);
+            background: linear-gradient(180deg, #475569 0%, #64748b 50%, #94a3b8 100%);
             z-index: 1;
-            opacity: 0.85;
-            pointer-events: none;
-        }
-
-        .bg-ghost-text {
-            position: fixed;
-            top: 12%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 760px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
             text-align: center;
-            color: rgba(216, 180, 254, 0.14);
-            filter: blur(5px);
-            z-index: 1;
-            pointer-events: none;
-            user-select: none;
         }
 
-        .bg-ghost-text h2 {
-            font-size: 32px;
-            margin-bottom: 12px;
+        .backdrop-product-box {
+            max-width: 720px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            opacity: 0.72;
         }
 
-        .bg-ghost-text p {
-            font-size: 18px;
+        .backdrop-product-box img {
+            max-height: 240px;
+            max-width: 100%;
+            width: auto;
+            object-fit: contain;
+            border-radius: 10px;
         }
 
-        /* Caixa Central de Pop-up com Copy Chamativa */
-        .popup-card {
+        .backdrop-headline {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        .backdrop-sub {
+            color: #f1f5f9;
+            font-size: 15px;
+            max-width: 540px;
+        }
+
+        /* Camada escura leve só para dar contraste ao modal */
+        .dim-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.35);
+            z-index: 2;
+        }
+
+        /* Pop-up Simples de Cookie Policy na Frente */
+        .cookie-box {
             position: relative;
             z-index: 10;
             background: #ffffff;
             width: 100%;
-            max-width: 450px;
-            border-radius: 18px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
-            padding: 26px 22px;
-            text-align: center;
-            border: 1px solid #e9d5ff;
-            animation: popIn 0.28s ease-out;
-        }
-
-        @keyframes popIn {
-            from { opacity: 0; transform: scale(0.96) translateY(8px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        /* Visual Roxo Vibrante do Produto no Topo */
-        .purple-visual-box {
-            display: block;
-            text-decoration: none;
-            background: linear-gradient(135deg, #6d28d9 0%, #9333ea 55%, #c026d3 100%);
-            border-radius: 14px;
-            padding: 20px 16px;
-            margin-bottom: 18px;
-            box-shadow: 0 12px 24px -6px rgba(126, 34, 206, 0.5);
-            transition: transform 0.2s ease, filter 0.2s ease;
-            color: #ffffff;
-        }
-
-        .purple-visual-box:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.05);
-        }
-
-        /* Se quiser usar uma imagem externa no lugar do bloco roxo, descomente a <img> abaixo */
-        .purple-visual-box img {
-            max-width: 100%;
-            max-height: 150px;
-            border-radius: 10px;
-            display: none;
-            margin: 0 auto 10px auto;
-        }
-
-        .purple-tag {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.18);
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            color: #faf5ff;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            padding: 4px 10px;
-            border-radius: 999px;
-            margin-bottom: 10px;
-        }
-
-        .purple-title {
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: 0.3px;
-            color: #ffffff;
-            line-height: 1.2;
-        }
-
-        .purple-sub {
-            font-size: 13px;
-            color: #f3e8ff;
-            margin-top: 6px;
-            font-weight: 500;
-        }
-
-        /* Copy Principal da Chamada */
-        .headline {
-            font-size: 21px;
-            font-weight: 800;
-            color: #1e1b4b;
-            line-height: 1.28;
-            margin-bottom: 10px;
-        }
-
-        .copy-text {
-            font-size: 14px;
-            color: #475569;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .copy-text strong {
-            color: #581c87;
-        }
-
-        /* Botões de Ação */
-        .actions {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .btn-primary-cta {
-            display: block;
-            width: 100%;
-            background: linear-gradient(90deg, #16a34a 0%, #15803d 100%);
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 800;
-            text-decoration: none;
-            padding: 15px 18px;
+            max-width: 440px;
             border-radius: 12px;
-            box-shadow: 0 8px 18px -4px rgba(22, 163, 74, 0.45);
-            transition: transform 0.15s ease, filter 0.15s ease;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            text-align: center;
         }
 
-        .btn-primary-cta:hover {
-            transform: translateY(-1px);
-            filter: brightness(1.05);
-        }
-
-        .btn-secondary-cta {
-            display: block;
+        /* Faixa colorida sutil no topo do modal */
+        .top-accent-bar {
+            height: 5px;
             width: 100%;
-            background-color: #f3e8ff;
-            color: #581c87;
-            font-size: 13px;
+            background: linear-gradient(90deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
+        }
+
+        .cookie-content {
+            padding: 26px 24px 22px 24px;
+        }
+
+        .cookie-title {
+            font-size: 20px;
             font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .cookie-text {
+            font-size: 13.5px;
+            color: #475569;
+            line-height: 1.55;
+            margin-bottom: 22px;
+        }
+
+        .cookie-btns {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .btn-allow {
+            background-color: #10b981;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
             text-decoration: none;
-            padding: 11px 16px;
-            border-radius: 10px;
-            border: 1px solid #d8b4fe;
+            padding: 10px 24px;
+            border-radius: 6px;
             transition: background-color 0.15s ease;
         }
 
-        .btn-secondary-cta:hover {
-            background-color: #e9d5ff;
+        .btn-allow:hover {
+            background-color: #059669;
         }
 
-        .trust-footer {
-            margin-top: 14px;
+        .btn-close-action {
+            background-color: #f8fafc;
+            color: #334155;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            transition: background-color 0.15s ease;
+        }
+
+        .btn-close-action:hover {
+            background-color: #e2e8f0;
+        }
+
+        .privacy-note {
             font-size: 11px;
             color: #94a3b8;
-        }
-
-        @media (min-width: 460px) {
-            .actions {
-                flex-direction: row;
-                align-items: center;
-            }
-            .btn-primary-cta {
-                flex: 1.6;
-            }
-            .btn-secondary-cta {
-                flex: 1;
-                padding: 15px 12px;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Fundo Escuro Desfocado -->
-    <div class="bg-blur-layer"></div>
-    <div class="bg-ghost-text">
-        <h2>Start Using Yu Sleep Tonight for Deep, Restorative Sleep</h2>
-        <p>Natural sleep formula designed for calm nights and energized mornings.</p>
+    <!-- Fundo Nítido com Imagem do Produto -->
+    <div class="page-backdrop">
+        <div class="backdrop-product-box">
+            <!-- LINK DA IMAGEM DO YU SLEEP AQUI -->
+            <img src="" alt="Yu Sleep">
+            <div class="backdrop-headline">Introducing Yu Sleep</div>
+            <div class="backdrop-sub">
+                A natural sleep formula designed to help you fall asleep faster, stay asleep through the night, and wake up refreshed.
+            </div>
+        </div>
     </div>
 
-    <!-- Pop-up com Copy Chamativa -->
-    <div class="popup-card">
+    <div class="dim-overlay"></div>
 
-        <!-- Bloco Visual Roxo Vibrante no Topo (Clicável para o Hoplink) -->
-        <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="purple-visual-box">
-            <!-- LINK DA IMAGEM ROXA DO PRODUTO AQUI (se quiser usar imagem própria, troque display:none por display:block no CSS acima) -->
-            <img src="" alt="Yu Sleep Purple Edition">
-            <div class="purple-tag">Official Formula Access</div>
-            <div class="purple-title">YU SLEEP NIGHT FORMULA</div>
-            <div class="purple-sub">Deep Sleep &bull; Zero Morning Grogginess</div>
-        </a>
-
-        <h1 class="headline">Fall Asleep Faster &amp; Unlock Your Official Discount</h1>
-
-        <p class="copy-text">
-            Tired of tossing and turning or waking up at 3 AM? Access the <strong>official Yu Sleep page</strong> now and check available special bundle pricing before continuing.
-        </p>
-
-        <!-- Botões Direcionando para o Hoplink -->
-        <div class="actions">
-            <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-primary-cta">
-                GO TO OFFICIAL SITE →
-            </a>
-            <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-secondary-cta">
-                Claim Offer
-            </a>
-        </div>
-
-        <div class="trust-footer">
-            Cookies Enabled for Offer Verification &bull; Direct Official Redirect
+    <!-- Pop-up Cookie Policy na Frente -->
+    <div class="cookie-box">
+        <div class="top-accent-bar"></div>
+        <div class="cookie-content">
+            <div class="cookie-title">Cookie Policy</div>
+            <p class="cookie-text">
+                This site uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By clicking "Allow", you agree to the use of cookies. For more information, visit our Cookie Policy.
+            </p>
+            <div class="cookie-btns">
+                <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-allow">Allow</a>
+                <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-close-action">Close</a>
+            </div>
+            <div class="privacy-note">Your privacy matters to us</div>
         </div>
     </div>
 
