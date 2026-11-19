@@ -13,83 +13,149 @@
         }
 
         body {
-            background-color: #334155;
+            background-color: #f1f5f9;
+            color: #0f172a;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
             position: relative;
             overflow-x: hidden;
         }
 
-        /* Fundo nítido (sem blur) simulando a vitrine do produto */
-        .page-backdrop {
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(180deg, #475569 0%, #64748b 50%, #94a3b8 100%);
+        /* Fundo: Página Oficial / Clone do Yu Sleep */
+        .official-bg {
+            position: relative;
             z-index: 1;
+            min-height: 100vh;
+            background: #ffffff;
+        }
+
+        .official-header {
+            background-color: #1e1b4b;
+            color: #ffffff;
+            padding: 14px 24px;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 24px;
+            justify-content: space-between;
+        }
+
+        .official-brand {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .official-menu {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            color: #e2e8f0;
+        }
+
+        .official-cta-top {
+            background-color: #ea580c;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 8px 14px;
+            border-radius: 6px;
+        }
+
+        .official-hero {
+            background: linear-gradient(135deg, #2e1065 0%, #4c1d95 100%);
+            color: #ffffff;
+            padding: 34px 20px;
             text-align: center;
         }
 
-        .backdrop-product-box {
-            max-width: 720px;
-            width: 100%;
+        .official-hero h1 {
+            font-size: 28px;
+            line-height: 1.25;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .official-hero h1 span {
+            color: #facc15;
+        }
+
+        .official-main {
+            max-width: 980px;
+            margin: 34px auto;
+            padding: 0 20px 50px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .official-bottle-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .official-bottle-box img {
+            max-width: 100%;
+            max-height: 270px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .official-copy h2 {
+            font-size: 22px;
+            color: #1e1b4b;
+            margin-bottom: 12px;
+        }
+
+        .official-copy p {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .official-bullets {
+            list-style: none;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            opacity: 0.72;
+            gap: 8px;
+            font-size: 14px;
+            color: #1e293b;
+            font-weight: 500;
         }
 
-        .backdrop-product-box img {
-            max-height: 240px;
-            max-width: 100%;
-            width: auto;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        .backdrop-headline {
-            color: #ffffff;
-            font-size: 28px;
+        .official-bullets li::before {
+            content: "• ";
+            color: #7c3aed;
             font-weight: 700;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.25);
         }
 
-        .backdrop-sub {
-            color: #f1f5f9;
-            font-size: 15px;
-            max-width: 540px;
-        }
-
-        /* Camada escura leve só para dar contraste ao modal */
-        .dim-overlay {
+        /* Camada escura leve sobre o fundo para o pop-up destacar */
+        .overlay-layer {
             position: fixed;
             inset: 0;
-            background: rgba(15, 23, 42, 0.35);
-            z-index: 2;
+            background: rgba(15, 23, 42, 0.45);
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
         }
 
-        /* Pop-up Simples de Cookie Policy na Frente */
+        /* Pop-up de Cookie Policy na frente */
         .cookie-box {
             position: relative;
-            z-index: 10;
+            z-index: 30;
             background: #ffffff;
             width: 100%;
             max-width: 440px;
             border-radius: 12px;
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
             overflow: hidden;
             text-align: center;
         }
 
-        /* Faixa colorida sutil no topo do modal */
         .top-accent-bar {
             height: 5px;
             width: 100%;
@@ -156,37 +222,73 @@
             font-size: 11px;
             color: #94a3b8;
         }
+
+        @media (max-width: 720px) {
+            .official-main {
+                grid-template-columns: 1fr;
+            }
+            .official-hero h1 {
+                font-size: 22px;
+            }
+            .official-menu {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Fundo Nítido com Imagem do Produto -->
-    <div class="page-backdrop">
-        <div class="backdrop-product-box">
-            <!-- LINK DA IMAGEM DO YU SLEEP AQUI -->
-            <img src="" alt="Yu Sleep">
-            <div class="backdrop-headline">Introducing Yu Sleep</div>
-            <div class="backdrop-sub">
-                A natural sleep formula designed to help you fall asleep faster, stay asleep through the night, and wake up refreshed.
+    <!-- Página Oficial / Clone do Yu Sleep no Fundo -->
+    <div class="official-bg">
+        <header class="official-header">
+            <div class="official-brand">Yu Sleep</div>
+            <div class="official-menu">
+                <span>About YuSleep</span>
+                <span>Ingredients</span>
+                <span>FAQ</span>
             </div>
-        </div>
+            <div class="official-cta-top">ORDER NOW</div>
+        </header>
+
+        <section class="official-hero">
+            <h1>Start Using <span>YuSleep</span> Tonight for the Deep, Restorative Sleep Your Body Deserves!</h1>
+        </section>
+
+        <main class="official-main">
+            <div class="official-bottle-box">
+                <!-- Suba a imagem dos frascos no GitHub com o nome yusleep.png -->
+                <img src="yusleep.png" alt="Yu Sleep Bottles">
+            </div>
+
+            <div class="official-copy">
+                <h2>Yu Sleep Formula</h2>
+                <p>
+                    Yu Sleep is an all-natural nano-enhanced sleep formula designed to help you fall asleep faster, stay asleep all night without 3 AM wake-ups, and wake up truly refreshed.
+                </p>
+                <ul class="official-bullets">
+                    <li>Fall asleep faster</li>
+                    <li>Stay asleep all night without those brutal 3 AM wake-ups</li>
+                    <li>Wake up truly refreshed</li>
+                </ul>
+            </div>
+        </main>
     </div>
 
-    <div class="dim-overlay"></div>
-
-    <!-- Pop-up Cookie Policy na Frente -->
-    <div class="cookie-box">
-        <div class="top-accent-bar"></div>
-        <div class="cookie-content">
-            <div class="cookie-title">Cookie Policy</div>
-            <p class="cookie-text">
-                This site uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By clicking "Allow", you agree to the use of cookies. For more information, visit our Cookie Policy.
-            </p>
-            <div class="cookie-btns">
-                <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-allow">Allow</a>
-                <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-close-action">Close</a>
+    <!-- Pop-up Cookie Policy na Frente (Mantido) -->
+    <div class="overlay-layer">
+        <div class="cookie-box">
+            <div class="top-accent-bar"></div>
+            <div class="cookie-content">
+                <div class="cookie-title">Cookie Policy</div>
+                <p class="cookie-text">
+                    This site uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By clicking "Allow", you agree to the use of cookies. For more information, visit our Cookie Policy.
+                </p>
+                <div class="cookie-btns">
+                    <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-allow">Allow</a>
+                    <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-close-action">Close</a>
+                </div>
+                <div class="privacy-note">Your privacy matters to us</div>
             </div>
-            <div class="privacy-note">Your privacy matters to us</div>
         </div>
     </div>
 
