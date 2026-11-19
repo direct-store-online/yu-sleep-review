@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yu Sleep™ Official Site — Cookie Preferences & Offer Access</title>
+    <title>Yu Sleep™ Official Offer — Deep Restorative Sleep</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #0b1120;
+            background-color: #090514;
             color: #1e293b;
             min-height: 100vh;
             display: flex;
@@ -24,179 +24,199 @@
             overflow-x: hidden;
         }
 
-        /* Fundo desfocado simulando a página oficial do Yu Sleep */
-        .bg-page-simulation {
+        /* Fundo escuro desfocado simulando a página oficial */
+        .bg-blur-layer {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at top center, #1e3a8a 0%, #0f172a 60%, #020617 100%);
-            filter: blur(10px);
-            transform: scale(1.05);
+            inset: 0;
+            background: radial-gradient(circle at 50% 20%, #4c1d95 0%, #1e1b4b 45%, #070510 100%);
+            filter: blur(12px);
+            transform: scale(1.08);
             z-index: 1;
-            opacity: 0.75;
+            opacity: 0.85;
             pointer-events: none;
         }
 
-        /* Elementos decorativos borrados ao fundo para dar realismo */
-        .bg-mock-content {
+        .bg-ghost-text {
             position: fixed;
-            top: 10%;
+            top: 12%;
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
-            max-width: 800px;
+            max-width: 760px;
             text-align: center;
-            color: rgba(255, 255, 255, 0.15);
-            filter: blur(6px);
+            color: rgba(216, 180, 254, 0.14);
+            filter: blur(5px);
             z-index: 1;
-            user-select: none;
             pointer-events: none;
+            user-select: none;
         }
 
-        .bg-mock-content h2 {
+        .bg-ghost-text h2 {
             font-size: 32px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
-        .bg-mock-content p {
+        .bg-ghost-text p {
             font-size: 18px;
-            line-height: 1.6;
         }
 
-        /* Caixa Central - Pop-up de Cookies */
-        .cookie-modal {
+        /* Caixa Central de Pop-up com Copy Chamativa */
+        .popup-card {
             position: relative;
             z-index: 10;
             background: #ffffff;
             width: 100%;
-            max-width: 460px;
-            border-radius: 16px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55);
-            padding: 28px 24px;
+            max-width: 450px;
+            border-radius: 18px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+            padding: 26px 22px;
             text-align: center;
-            border: 1px solid #e2e8f0;
-            animation: fadeIn 0.3s ease-out;
+            border: 1px solid #e9d5ff;
+            animation: popIn 0.28s ease-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.96) translateY(8px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        /* Área da Imagem do Produto no Topo */
-        .product-top-link {
+        /* Visual Roxo Vibrante do Produto no Topo */
+        .purple-visual-box {
             display: block;
-            margin: 0 auto 18px auto;
             text-decoration: none;
-            transition: transform 0.2s ease;
+            background: linear-gradient(135deg, #6d28d9 0%, #9333ea 55%, #c026d3 100%);
+            border-radius: 14px;
+            padding: 20px 16px;
+            margin-bottom: 18px;
+            box-shadow: 0 12px 24px -6px rgba(126, 34, 206, 0.5);
+            transition: transform 0.2s ease, filter 0.2s ease;
+            color: #ffffff;
         }
 
-        .product-top-link:hover {
-            transform: scale(1.03);
+        .purple-visual-box:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.05);
         }
 
-        .product-top-link img {
-            max-width: 210px;
-            width: 100%;
-            height: auto;
+        /* Se quiser usar uma imagem externa no lugar do bloco roxo, descomente a <img> abaixo */
+        .purple-visual-box img {
+            max-width: 100%;
+            max-height: 150px;
             border-radius: 10px;
-            display: block;
-            margin: 0 auto;
+            display: none;
+            margin: 0 auto 10px auto;
         }
 
-        .cookie-badge {
+        .purple-tag {
             display: inline-block;
-            background-color: #eff6ff;
-            color: #1d4ed8;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: #faf5ff;
             font-size: 11px;
             font-weight: 700;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
-            letter-spacing: 0.6px;
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 999px;
-            margin-bottom: 12px;
-        }
-
-        .cookie-modal h1 {
-            font-size: 21px;
-            font-weight: 700;
-            color: #0f172a;
             margin-bottom: 10px;
-            line-height: 1.3;
         }
 
-        .cookie-modal p {
+        .purple-title {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .purple-sub {
+            font-size: 13px;
+            color: #f3e8ff;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        /* Copy Principal da Chamada */
+        .headline {
+            font-size: 21px;
+            font-weight: 800;
+            color: #1e1b4b;
+            line-height: 1.28;
+            margin-bottom: 10px;
+        }
+
+        .copy-text {
             font-size: 14px;
             color: #475569;
-            line-height: 1.55;
-            margin-bottom: 22px;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
-        /* Grupo de Botões Antifuga */
-        .button-group {
+        .copy-text strong {
+            color: #581c87;
+        }
+
+        /* Botões de Ação */
+        .actions {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
 
-        .btn-accept {
+        .btn-primary-cta {
             display: block;
             width: 100%;
-            background-color: #16a34a;
+            background: linear-gradient(90deg, #16a34a 0%, #15803d 100%);
             color: #ffffff;
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 800;
             text-decoration: none;
-            padding: 15px 20px;
-            border-radius: 10px;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.35);
+            padding: 15px 18px;
+            border-radius: 12px;
+            box-shadow: 0 8px 18px -4px rgba(22, 163, 74, 0.45);
+            transition: transform 0.15s ease, filter 0.15s ease;
         }
 
-        .btn-accept:hover {
-            background-color: #15803d;
+        .btn-primary-cta:hover {
             transform: translateY(-1px);
+            filter: brightness(1.05);
         }
 
-        .btn-close {
+        .btn-secondary-cta {
             display: block;
             width: 100%;
-            background-color: #f1f5f9;
-            color: #475569;
-            font-size: 14px;
-            font-weight: 600;
+            background-color: #f3e8ff;
+            color: #581c87;
+            font-size: 13px;
+            font-weight: 700;
             text-decoration: none;
-            padding: 12px 20px;
+            padding: 11px 16px;
             border-radius: 10px;
-            border: 1px solid #cbd5e1;
-            transition: background-color 0.2s ease, color 0.2s ease;
+            border: 1px solid #d8b4fe;
+            transition: background-color 0.15s ease;
         }
 
-        .btn-close:hover {
-            background-color: #e2e8f0;
-            color: #1e293b;
+        .btn-secondary-cta:hover {
+            background-color: #e9d5ff;
         }
 
-        .footer-note {
-            margin-top: 16px;
+        .trust-footer {
+            margin-top: 14px;
             font-size: 11px;
             color: #94a3b8;
         }
 
-        @media (min-width: 480px) {
-            .button-group {
+        @media (min-width: 460px) {
+            .actions {
                 flex-direction: row;
-            }
-            .btn-accept {
-                flex: 2;
-            }
-            .btn-close {
-                flex: 1;
-                display: flex;
                 align-items: center;
-                justify-content: center;
+            }
+            .btn-primary-cta {
+                flex: 1.6;
+            }
+            .btn-secondary-cta {
+                flex: 1;
+                padding: 15px 12px;
             }
         }
     </style>
@@ -204,41 +224,42 @@
 <body>
 
     <!-- Fundo Escuro Desfocado -->
-    <div class="bg-page-simulation"></div>
-    <div class="bg-mock-content">
+    <div class="bg-blur-layer"></div>
+    <div class="bg-ghost-text">
         <h2>Start Using Yu Sleep Tonight for Deep, Restorative Sleep</h2>
-        <p>All-natural nano-enhanced sleep formula designed to help you fall asleep faster and wake up refreshed.</p>
+        <p>Natural sleep formula designed for calm nights and energized mornings.</p>
     </div>
 
-    <!-- Pop-up Central de Cookies -->
-    <div class="cookie-modal">
-        
-        <!-- Imagem dos Frascos no Topo (Clicável para o Hoplink) -->
-        <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="product-top-link">
-            <!-- LINK DA IMAGEM DO YU SLEEP AQUI -->
-            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=450&auto=format&fit=crop&q=80" alt="Yu Sleep Official Supplement">
+    <!-- Pop-up com Copy Chamativa -->
+    <div class="popup-card">
+
+        <!-- Bloco Visual Roxo Vibrante no Topo (Clicável para o Hoplink) -->
+        <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="purple-visual-box">
+            <!-- LINK DA IMAGEM ROXA DO PRODUTO AQUI (se quiser usar imagem própria, troque display:none por display:block no CSS acima) -->
+            <img src="" alt="Yu Sleep Purple Edition">
+            <div class="purple-tag">Official Formula Access</div>
+            <div class="purple-title">YU SLEEP NIGHT FORMULA</div>
+            <div class="purple-sub">Deep Sleep &bull; Zero Morning Grogginess</div>
         </a>
 
-        <div class="cookie-badge">Official Website Access</div>
+        <h1 class="headline">Fall Asleep Faster &amp; Unlock Your Official Discount</h1>
 
-        <h1>Before You Continue — Cookie Settings &amp; Official Offer</h1>
-
-        <p>
-            We use cookies to ensure you get the best experience and to unlock your verified discount on the official <strong>Yu Sleep</strong> website. Click below to proceed.
+        <p class="copy-text">
+            Tired of tossing and turning or waking up at 3 AM? Access the <strong>official Yu Sleep page</strong> now and check available special bundle pricing before continuing.
         </p>
 
-        <!-- Botões Antifuga (Ambos direcionam para o Hoplink) -->
-        <div class="button-group">
-            <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-accept">
-                Accept &amp; Continue
+        <!-- Botões Direcionando para o Hoplink -->
+        <div class="actions">
+            <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-primary-cta">
+                GO TO OFFICIAL SITE →
             </a>
-            <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-close">
-                Close
+            <a href="https://4ba423x7y74m4s3x5j-6hk4yfl.hop.clickbank.net" class="btn-secondary-cta">
+                Claim Offer
             </a>
         </div>
 
-        <div class="footer-note">
-            256-Bit SSL Encrypted &bull; Verified Official Store Redirect
+        <div class="trust-footer">
+            Cookies Enabled for Offer Verification &bull; Direct Official Redirect
         </div>
     </div>
 
