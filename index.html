@@ -13,8 +13,8 @@
         }
 
         body {
-            background-color: #f1f5f9;
-            color: #0f172a;
+            background-color: #f3f4f6;
+            color: #1f2937;
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
@@ -25,128 +25,126 @@
             position: relative;
             z-index: 1;
             min-height: 100vh;
-            background: #ffffff;
+            background: #f9fafb;
         }
 
-        .official-header {
-            background-color: #1e1b4b;
-            color: #ffffff;
-            padding: 14px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .official-brand {
-            font-size: 20px;
-            font-weight: 800;
-            color: #ffffff;
-        }
-
-        .official-menu {
-            display: flex;
-            gap: 20px;
-            font-size: 13px;
-            color: #e2e8f0;
-        }
-
-        .official-cta-top {
-            background-color: #ea580c;
-            color: #ffffff;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 8px 14px;
-            border-radius: 6px;
-        }
-
-        .official-hero {
-            background: linear-gradient(135deg, #2e1065 0%, #4c1d95 100%);
-            color: #ffffff;
-            padding: 34px 20px;
+        .top-purple-bar {
+            background: linear-gradient(90deg, #3b0764 0%, #581c87 50%, #4c1d95 100%);
+            padding: 28px 20px;
             text-align: center;
+            color: #ffffff;
         }
 
-        .official-hero h1 {
-            font-size: 28px;
-            line-height: 1.25;
-            max-width: 820px;
+        .top-purple-bar h1 {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.22;
+            max-width: 920px;
             margin: 0 auto;
         }
 
-        .official-hero h1 span {
-            color: #facc15;
+        .top-purple-bar h1 .accent-green {
+            color: #a3e635;
         }
 
-        /* Chamada Grande Estilo Site Oficial embaixo */
-        .official-lower-section {
-            max-width: 980px;
-            margin: 28px auto 0 auto;
-            padding: 0 20px 60px 20px;
+        .main-showcase {
+            max-width: 1040px;
+            margin: 34px auto 0 auto;
+            padding: 0 24px 36px 24px;
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 32px;
+            align-items: center;
         }
 
-        .big-official-callout {
-            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
-            border: 1px solid #cbd5e1;
-            border-radius: 14px;
-            padding: 32px 28px;
-            text-align: left;
+        .bottles-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 18px;
         }
 
-        .big-official-callout h2 {
-            font-size: 26px;
-            line-height: 1.25;
-            color: #1e1b4b;
-            margin-bottom: 14px;
-            font-weight: 800;
+        .bottles-area img {
+            max-width: 100%;
+            max-height: 270px;
+            object-fit: contain;
         }
 
-        .big-official-callout .lead-copy {
-            font-size: 16px;
-            line-height: 1.65;
-            color: #334155;
+        .right-info h2 {
+            font-size: 22px;
+            font-weight: 500;
+            color: #374151;
+            line-height: 1.4;
             margin-bottom: 18px;
         }
 
-        .big-official-callout .highlight-banner {
-            background-color: #ede9fe;
-            border-left: 4px solid #6d28d9;
-            padding: 14px 18px;
-            border-radius: 8px;
-            color: #3b0764;
-            font-size: 15px;
-            font-weight: 600;
-            line-height: 1.5;
-            margin-bottom: 20px;
+        .right-info h2 strong {
+            color: #111827;
+            font-weight: 800;
         }
 
-        .official-bullets {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 12px;
-            font-size: 14.5px;
-            color: #1e293b;
-            font-weight: 600;
-        }
-
-        .official-bullets li {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            padding: 12px 14px;
-            border-radius: 8px;
-        }
-
-        .official-bullets li::before {
-            content: "● ";
-            color: #7c3aed;
+        .right-info h2 .highlight-purple {
+            color: #7e22ce;
             font-weight: 700;
         }
 
-        /* Camada escura leve sobre o fundo para o pop-up destacar */
+        .sleep-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 20px;
+        }
+
+        .sleep-list li::before {
+            content: "● ";
+            color: #4b5563;
+            margin-right: 4px;
+        }
+
+        .melatonin-note {
+            font-size: 16px;
+            color: #374151;
+            line-height: 1.45;
+        }
+
+        .melatonin-note strong {
+            color: #111827;
+            font-weight: 800;
+        }
+
+        .bottom-science-bar {
+            background-color: #e5e7eb;
+            border-top: 1px solid #d1d5db;
+            padding: 20px 24px;
+            text-align: center;
+        }
+
+        .bottom-science-bar p {
+            max-width: 960px;
+            margin: 0 auto;
+            font-size: 17px;
+            color: #374151;
+            line-height: 1.45;
+        }
+
+        .bottom-science-bar strong {
+            color: #111827;
+            font-weight: 800;
+        }
+
+        /* Camada sobre a página completa para o pop-up destacar */
         .overlay-layer {
             position: fixed;
             inset: 0;
-            background: rgba(15, 23, 42, 0.45);
+            background: rgba(15, 23, 42, 0.42);
             z-index: 20;
             display: flex;
             align-items: center;
@@ -154,7 +152,7 @@
             padding: 16px;
         }
 
-        /* Pop-up de Cookie Policy na frente */
+        /* Pop-up de Cookie Policy na Frente */
         .cookie-box {
             position: relative;
             z-index: 30;
@@ -234,15 +232,13 @@
             color: #94a3b8;
         }
 
-        @media (max-width: 720px) {
-            .official-hero h1 {
+        @media (max-width: 768px) {
+            .top-purple-bar h1 {
                 font-size: 22px;
             }
-            .big-official-callout h2 {
-                font-size: 21px;
-            }
-            .official-menu {
-                display: none;
+            .main-showcase {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
         }
     </style>
@@ -251,40 +247,40 @@
 
     <!-- Página Oficial / Clone do Yu Sleep no Fundo -->
     <div class="official-bg">
-        <header class="official-header">
-            <div class="official-brand">Yu Sleep</div>
-            <div class="official-menu">
-                <span>About YuSleep</span>
-                <span>Ingredients</span>
-                <span>FAQ</span>
+        <div class="top-purple-bar">
+            <h1>Start Using <span class="accent-green">YuSleep</span> Tonight for the Deep, Restorative Sleep Your Body Deserves!</h1>
+        </div>
+
+        <div class="main-showcase">
+            <div class="bottles-area">
+                <img src="garrafinhas.png" alt="Yu Sleep Bottles">
             </div>
-            <div class="official-cta-top">ORDER NOW</div>
-        </header>
 
-        <section class="official-hero">
-            <h1>Start Using <span>YuSleep</span> Tonight for the Deep, Restorative Sleep Your Body Deserves!</h1>
-        </section>
+            <div class="right-info">
+                <h2>
+                    <strong>Yu Sleep</strong> is a delicious, all-natural <span class="highlight-purple">nano-enhanced sleep</span> formula designed to help you:
+                </h2>
 
-        <!-- Chamada Grande embaixo no Estilo do Site Oficial -->
-        <main class="official-lower-section">
-            <div class="big-official-callout">
-                <h2>Yu Sleep Is a Delicious, All-Natural Nano-Enhanced Sleep Formula Designed to Help You Sleep Deeply Through the Night</h2>
-                <p class="lead-copy">
-                    Instead of relying on high-dose melatonin or synthetic supplements that can leave you groggy the next morning, Yu Sleep works with your body's natural rhythm using plant-based ingredients backed by modern science.
-                </p>
-                <div class="highlight-banner">
-                    Wake Up Truly Refreshed — Support Calm Evenings, Deeper Rest, and Steady Morning Energy Without 3 AM Wake-Ups.
-                </div>
-                <ul class="official-bullets">
-                    <li>Fall asleep faster naturally</li>
-                    <li>Stay asleep all night without 3 AM wake-ups</li>
-                    <li>Wake up truly refreshed and clear-headed</li>
+                <ul class="sleep-list">
+                    <li>Fall asleep faster</li>
+                    <li>Stay asleep all night without those brutal 3 AM wake-ups</li>
+                    <li>Wake up truly refreshed</li>
                 </ul>
+
+                <p class="melatonin-note">
+                    Instead of relying on high-dose melatonin or synthetic supplements that can leave you <strong>groggy the next morning...</strong>
+                </p>
             </div>
-        </main>
+        </div>
+
+        <div class="bottom-science-bar">
+            <p>
+                <strong>Yu Sleep</strong> works with your body's natural rhythm, using plant-based ingredients backed by cutting-edge neuroscience and decades of clinical research.
+            </p>
+        </div>
     </div>
 
-    <!-- Pop-up Cookie Policy na Frente (Mantido) -->
+    <!-- Pop-up Cookie Policy na Frente -->
     <div class="overlay-layer">
         <div class="cookie-box">
             <div class="top-accent-bar"></div>
